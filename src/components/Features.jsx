@@ -9,15 +9,18 @@ const Features = ({ features }) => {
         return (
           <div className="fs-5 d-flex flex-row">
             <div className="feature-row">
-              {Object.values(feature)[0] === true ? (
-                <FontAwesomeIcon icon={faCheck} color="green" />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faTimes}
-                  color="red"
-                  className="check-icon"
-                />
-              )}
+              {
+                // if feature is part of the product, display green check, else red cross
+                Object.values(feature)[0] ? (
+                  <FontAwesomeIcon icon={faCheck} color="green" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    color="red"
+                    className="check-icon"
+                  />
+                )
+              }
             </div>
             {Object.keys(feature)[0]}
           </div>
